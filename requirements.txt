@@ -1,0 +1,9 @@
+opencv-python
+numpy
+kornia
+scipy
+scikit-learn
+torchmetrics==0.10.3
+tqdm
+loguru
+timm
