@@ -133,12 +133,12 @@ def main(args):
         test_fns = sorted(glob(os.path.join(root_dir, 'test/*/*')))
         with open(os.path.join(args.retrieval_dir, sub_category, 'r_result.json'), 'r') as f:
             retrieval_result = json.load(f)
-        forground_result = {}
+        foreground_result = {}
         if args.foreground_dir is not None and sub_category in object_categories:
             for fn in train_fns + test_fns:
                 k = os.path.relpath(fn, root_dir)
-                forground_result[k] = os.path.join(args.foreground_dir, sub_category, os.path.dirname(k), 'f_' + os.path.splitext(os.path.basename(k))[0] + '.npy')
-        ret = test(model, train_fns, test_fns, retrieval_result, forground_result, args.resize, args.region_sizes, root_dir, args.k_nearest, args.T)
+                foreground_result[k] = os.path.join(args.foreground_dir, sub_category, os.path.dirname(k), 'f_' + os.path.splitext(os.path.basename(k))[0] + '.npy')
+        ret = test(model, train_fns, test_fns, retrieval_result, foreground_result, args.resize, args.region_sizes, root_dir, args.k_nearest, args.T)
         print(f'================={sub_category}=================')
         print(ret)
 

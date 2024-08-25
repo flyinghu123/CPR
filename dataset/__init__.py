@@ -1,4 +1,6 @@
+from torch.utils.data.sampler import RandomSampler
 import cv2 as cv
+import torch
 import torchvision.transforms as T
 
 
@@ -60,3 +62,16 @@ test_transform = T.Compose([
     T.ToTensor(),
     T.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD),
 ])
+
+def inverse_test_transform(image):
+    denormalized = image * torch.tensor(IMAGENET_STD, device=image.device).view(3, 1, 1) + \
+                   torch.tensor(IMAGENET_MEAN, device=image.device).view(3, 1, 1)
+    img = denormalized * 255.0
+    img = img.to(torch.uint8)
+    return img.cpu().numpy().transpose(1, 2, 0)
+
+class InfiniteSampler(RandomSampler):
+    def __iter__(self):
+        while True: yield from super().__iter__()
+
+from dataset.base import CPRDataset

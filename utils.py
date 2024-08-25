@@ -52,6 +52,7 @@ def fix_seeds(seed, with_torch=True, with_cuda=True):
         torch.cuda.manual_seed_all(seed)
         torch.backends.cudnn.deterministic = False
         torch.backends.cudnn.benchmark = False
+    return lambda worker_id: fix_seeds(seed+worker_id)
     
 def time_synchronized():
     if torch.cuda.is_available():

@@ -46,7 +46,11 @@ python tools/generate_retrieval.py
 
 ## Training
 
-> The Training code will be published after the paper is accepted.
+**generate synthetic data**
+
+`python tools/generate_synthetic_data.py -fd log/foreground_mvtec_DenseNet_features.denseblock1_320`
+
+`bash train.sh`
 
 ## Testing
 

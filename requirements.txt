@@ -7,3 +7,7 @@ torchmetrics==0.10.3
 tqdm
 loguru
 timm
+einops
+imgaug
+matplotlib
+tensorboard
