@@ -67,12 +67,16 @@ We borrow some codes from [PatchCore](https://github.com/amazon-science/patchcor
 
 ## Citation
 ```
-@misc{li2023target,
-      title={Target before Shooting: Accurate Anomaly Detection and Localization under One Millisecond via Cascade Patch Retrieval}, 
-      author={Hanxi Li and Jianfei Hu and Bo Li and Hao Chen and Yongbin Zheng and Chunhua Shen},
-      year={2023},
-      eprint={2308.06748},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@ARTICLE{10678861,
+  author={Li, Hanxi and Hu, Jianfei and Li, Bo and Chen, Hao and Zheng, Yongbin and Shen, Chunhua},
+  journal={IEEE Transactions on Image Processing}, 
+  title={Target Before Shooting: Accurate Anomaly Detection and Localization Under One Millisecond via Cascade Patch Retrieval}, 
+  year={2024},
+  volume={33},
+  number={},
+  pages={5606-5621},
+  keywords={Accuracy;Anomaly detection;Measurement;Standards;Prototypes;Image retrieval;Image reconstruction;Anomaly detection;image patch retrieval;metric learning},
+  doi={10.1109/TIP.2024.3448263}
 }
+
 ```
